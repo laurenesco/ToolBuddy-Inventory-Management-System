@@ -1,9 +1,9 @@
 //
 //Program Name:                  main_menu.h
-//Last Modified:                     04/24/22
-//Modified By:                       Lauren Escobedo
+//Last Modified:                    04/24/22
+//Modified By:                      Lauren Escobedo
 //Program Description:          This is the header file for the main menu page. It includes the class definition,
-//                                          slot definitions, and included libraries
+//                                        slot definitions, and included libraries
 
 
 #ifndef MAIN_MENU_H

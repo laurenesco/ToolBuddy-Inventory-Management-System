@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>788</width>
-    <height>500</height>
+    <width>677</width>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -163,8 +163,8 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
               <widget class="QLineEdit" name="lineEdit"/>
              </item>
             </layout>
@@ -202,8 +202,8 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
               <widget class="QPushButton" name="searchButton">
                <property name="text">
                 <string>Search</string>
@@ -237,19 +237,15 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="qrPageButton">
-       <property name="geometry">
-        <rect>
-         <x>650</x>
-         <y>60</y>
-         <width>121</width>
-         <height>29</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Search by QR</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="qrPageButton">
+         <property name="text">
+          <string>Search by QR</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -259,7 +255,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>788</width>
+     <width>677</width>
      <height>25</height>
     </rect>
    </property>

@@ -1,9 +1,9 @@
 //
-//Program Name:                  data_dictionary.h
-//Last Modified:                 04/24/22
-//Modified By:                   Lauren Escobedo
+//Program Name:                   data_dictionary.h
+//Last Modified:                     04/24/22
+//Modified By:                       Lauren Escobedo
 //Program Description:           This is the header file for the data dicitonary page. It includes the class definition,
-//                               slot definitions, and included libraries
+//                                         slot definitions, and included libraries
 
 
 #ifndef DATA_DICTIONARY_H
@@ -14,8 +14,10 @@
 #include <QScrollArea>
 #include <QTextEdit>
 #include <QFile>
+#include <QMessageBox>
 #include <QFrame>
 #include <QTextStream>
+#include <QTextBrowser>
 
 namespace Ui {
 class Data_Dictionary;

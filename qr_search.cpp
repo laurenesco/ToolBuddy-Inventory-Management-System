@@ -2,9 +2,9 @@
 //Program Name:               qr_search.cpp
 //Last Modified:                  04/24/22
 //Modified By:                    Lauren Escobedo
-//Program Description:      This program is responsible for the functionality of the qr search page.
-//                                      This includes connecting to the camera, scanning for new cameras,
-//                                      displaying the viewfinder, and utilizing Zebra to scan the qr code.
+//Program Description:       This program is responsible for the functionality of the qr search page.
+//                                     This includes connecting to the camera, scanning for new cameras,
+//                                     displaying the viewfinder, and utilizing Zebra to scan the qr code.
 
 #include "qr_search.h"
 #include "ui_qr_search.h"
@@ -20,8 +20,8 @@
 
 #include <QtWidgets>
 
-QR_Search::QR_Search(QWidget *parent) :
-    QWidget(parent),
+QR_Search::QR_Search(QDialog *parent) :
+    QDialog(parent),
     ui(new Ui::QR_Search)
 {
     ui->setupUi(this);
