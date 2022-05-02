@@ -303,6 +303,16 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
+           <widget class="QLineEdit" name="testIdBox">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>60</y>
+              <width>113</width>
+              <height>28</height>
+             </rect>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>

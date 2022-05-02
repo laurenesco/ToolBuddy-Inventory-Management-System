@@ -12,8 +12,10 @@
 
 #include <QSql>
 #include <QSqlDatabase>
+#include <QSqlError>
 #include <QSqlQuery>
 #include <QString>
+#include <QMessageBox>
 
 Add_item::Add_item(QWidget *parent) :
     QDialog(parent),
@@ -60,13 +62,32 @@ void Add_item::on_resetButton_clicked() {
 
 //passes data to database upon clicking submit button
 void Add_item::on_submitButton_clicked()    {
-    QString name, location, safety, summary, use;
+    QString name, location, safety, summary, possibleUses, identificationNumber;
+    identificationNumber =             ui->testIdBox->text();
     name =        ui->nameField->text();
     location =     ui->locationField->text();
     safety =        ui->safetyField->text();
     summary =   ui->summaryField->text();
-    use =            ui->useField->text();
+    possibleUses =            ui->useField->text();
 
     QSqlQuery qry;
+    qry.prepare("INSERT INTO TOOLS (TOOL_ID, TOOL_NAME, TOOL_SUMMARY, TOOL_LOCATION, TOOL_USE, TOOL_SAFETY) "
+                     "VALUES (:identificationNumber, :name, :summary, :location, :possibleUses, :safety)");
+    //binding all values to prevent sql injection attacks
+    qry.bindValue(":identificationNumber", identificationNumber);
+    qry.bindValue(":name", name);
+    qry.bindValue(":summary", summary);
+    qry.bindValue(":location", location);
+    qry.bindValue(":possibleUses", possibleUses);
+    qry.bindValue(":safety", safety);
+
+
+    if(qry.exec()){
+        QMessageBox::critical(this,tr("Confirmation Message"),tr("Success!"));
+    }
+    else    {
+        QMessageBox::critical(this,tr("Confirmation Message"),tr("Error, data was not saved."), qry.lastError().text());
+    }
+    connClose();
 }
 
