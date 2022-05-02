@@ -11,6 +11,11 @@
 #define ADD_ITEM_H
 
 #include <QDialog>
+#include <main_menu.h>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QString>
 
 namespace Ui {
 class Add_item;
@@ -25,10 +30,14 @@ public:
     ~Add_item();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_resetButton_clicked();
+    void on_submitButton_clicked();
 
 private:
     Ui::Add_item *ui;
+    void connClose();
+    bool connOpen();
+    QSqlDatabase mydb;
 };
 
 #endif // ADD_ITEM_H

@@ -25,10 +25,10 @@ Main_Menu::Main_Menu(QWidget *parent) :
 
     //displays connection status
     if (mydb.open())    {
-        ui->statusLabel->setText("Connected");
+        ui->statusLabel->setText("Connected!");
     }
     else    {
-        ui->statusLabel->setText("Not Connected");
+        ui->statusLabel->setText("Not Connected...");
     }
 }
 

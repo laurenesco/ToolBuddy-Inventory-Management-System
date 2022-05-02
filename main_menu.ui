@@ -87,6 +87,9 @@
           </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="5,0">
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame_2">
               <property name="frameShape">

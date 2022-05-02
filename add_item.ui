@@ -233,7 +233,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4" stretch="5,4">
             <item>
-             <widget class="QFrame" name="frame_11">
+             <widget class="QFrame" name="buttonsFrame">
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
@@ -254,14 +254,14 @@
                 <number>0</number>
                </property>
                <item>
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="submitButton">
                  <property name="text">
                   <string>Submit</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_2">
+                <widget class="QPushButton" name="resetButton">
                  <property name="text">
                   <string>Reset</string>
                  </property>
@@ -278,6 +278,18 @@
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QLabel" name="statusLabel">
+                 <property name="text">
+                  <string>[+]Status</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </item>
            </layout>
