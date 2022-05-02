@@ -14,6 +14,10 @@
 
 #include <QMainWindow>
 #include <QFrame>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QFileInfo>
+#include <QDebug>
 
 namespace Ui {
 class Main_Menu;
@@ -30,8 +34,8 @@ private slots:
     void on_qrPageButton_clicked();
     void on_actionQRScanner_triggered();
     void on_searchButton_clicked();
-
     void on_actionDataDictionary_triggered();
+    void on_addItemButton_clicked();
 
 private:
     Ui::Main_Menu *ui;

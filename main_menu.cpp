@@ -7,6 +7,7 @@
 
 #include "main_menu.h"
 #include "qr_search.h"
+#include "add_item.h"
 #include "ui_main_menu.h"
 #include "qr_search.h"
 #include "data_dictionary.h"
@@ -17,6 +18,18 @@ Main_Menu::Main_Menu(QWidget *parent) :
     ui(new Ui::Main_Menu)
 {
     ui->setupUi(this);
+
+    //creating db variable and connecting to existing database
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
+    mydb.setDatabaseName("C:/Users/laesc/OneDrive/Documents/ToolBuddy/test.db");
+
+    //displays connection status
+    if (mydb.open())    {
+        ui->statusLabel->setText("Connected");
+    }
+    else    {
+        ui->statusLabel->setText("Not Connected");
+    }
 }
 
 //destructor
@@ -50,5 +63,11 @@ void Main_Menu::on_qrPageButton_clicked()
 void Main_Menu::on_searchButton_clicked()
 {
     //not complete
+}
+
+void Main_Menu::on_addItemButton_clicked()
+{
+    Add_item page;
+    page.exec();
 }
 
