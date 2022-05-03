@@ -1,9 +1,10 @@
 //
-//Program Name:                    qr_search_page.h
-//Last Modified:                      04/24/22
-//Modified By:                        Lauren Escobedo
-//Program Description:            This is the header file for the qr search page. It includes the class definition,
+// Program Name:                    qr_search_page.h
+// Last Modified:                      04/24/22
+// Modified By:                        Lauren Escobedo
+// Program Description:            This is the header file for the qr search page. It includes the class definition,
 //                                          slot definitions, and included libraries
+//
 
 #ifndef QR_SEARCH_H
 #define QR_SEARCH_H
@@ -14,6 +15,8 @@
 #include <QCameraImageCapture>
 #include <QMediaRecorder>
 #include <QScopedPointer>
+#include <QList>
+#include <QListWidget>
 
 namespace Ui {
 class QR_Search;
@@ -28,6 +31,7 @@ public:
     ~QR_Search();
 private slots:
     void setCamera(const QCameraInfo &cameraInfo);
+    void searchForCamera();
 
     void startCamera();
     void stopCamera();

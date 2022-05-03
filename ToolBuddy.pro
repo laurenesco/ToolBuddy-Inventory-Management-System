@@ -13,21 +13,24 @@ SOURCES += \
     data_dictionary.cpp \
     main.cpp \
     main_menu.cpp \
-    qr_search.cpp
+    qr_search.cpp \
+    search_results.cpp
 
 
 HEADERS += \
     add_item.h \
     data_dictionary.h \
     main_menu.h \
-    qr_search.h
+    qr_search.h \
+    search_results.h
 
 
 FORMS += \
     add_item.ui \
     data_dictionary.ui \
     main_menu.ui \
-    qr_search.ui
+    qr_search.ui \
+    search_results.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
