@@ -97,50 +97,23 @@
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_3">
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
                <property name="topMargin">
-                <number>10</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
+                <number>45</number>
                </property>
                <property name="bottomMargin">
-                <number>10</number>
+                <number>45</number>
                </property>
                <item>
                 <widget class="QLabel" name="nameLabel">
                  <property name="text">
-                  <string>Name:</string>
+                  <string>Item Name:</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="summaryLabel">
+                <widget class="QLabel" name="idLabel">
                  <property name="text">
-                  <string>Summary:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="locationLabel">
-                 <property name="text">
-                  <string>Location:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="useLabel">
-                 <property name="text">
-                  <string>Use/Component of:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="safetyLabel">
-                 <property name="text">
-                  <string>Safety Measures:</string>
+                  <string>Item ID Number:</string>
                  </property>
                 </widget>
                </item>
@@ -160,7 +133,7 @@
                 <number>0</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>5</number>
                </property>
                <property name="rightMargin">
                 <number>0</number>
@@ -172,16 +145,7 @@
                 <widget class="QLineEdit" name="nameField"/>
                </item>
                <item>
-                <widget class="QLineEdit" name="summaryField"/>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="locationField"/>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="useField"/>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="safetyField"/>
+                <widget class="QLineEdit" name="idField"/>
                </item>
               </layout>
              </widget>
@@ -303,16 +267,6 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <widget class="QLineEdit" name="testIdBox">
-            <property name="geometry">
-             <rect>
-              <x>30</x>
-              <y>60</y>
-              <width>113</width>
-              <height>28</height>
-             </rect>
-            </property>
-           </widget>
           </widget>
          </item>
         </layout>

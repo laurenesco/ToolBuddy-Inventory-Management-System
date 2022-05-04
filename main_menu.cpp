@@ -56,6 +56,7 @@ void Main_Menu::connOpen(){
 void Main_Menu::on_actionDataDictionary_triggered()
 {
     Data_Dictionary page;
+    page.setWindowTitle("Data Dictionary");
     page.exec();
 }
 
@@ -65,6 +66,7 @@ void Main_Menu::on_actionDataDictionary_triggered()
 void Main_Menu::on_actionQRScanner_triggered()
 {
     QR_Search page;
+    page.setWindowTitle("QR Search (Coming Soon!)");
     page.exec();
 }
 
@@ -74,16 +76,21 @@ void Main_Menu::on_actionQRScanner_triggered()
 void Main_Menu::on_qrPageButton_clicked()
 {
     QR_Search page;
+    page.setWindowTitle("QR Search (Coming Soon!)");
     page.exec();
 }
 
 ////
-///  trigger search results page
+///  create object of type search_results, assign keyword to variable key in search page class,
+///   and display the results, then rigger search results page,
 ////
 void Main_Menu::on_searchButton_clicked()
 {
     keyword = ui->searchBar->text();
     Search_Results page;
+    page.setWindowTitle("Search Results");
+    page.setKey(keyword);
+    page.displayResults();
     page.exec();
 }
 
@@ -93,6 +100,7 @@ void Main_Menu::on_searchButton_clicked()
 void Main_Menu::on_addItemButton_clicked()
 {
     Add_item page;
+    page.setWindowTitle("Add an Item");
     page.exec();
 }
 

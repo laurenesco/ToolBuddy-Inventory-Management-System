@@ -18,7 +18,8 @@ Search_Results::Search_Results(QWidget *parent) :
     ui(new Ui::Search_Results)
 {
     ui->setupUi(this);
-    displayResults();
+    connOpen();
+
 }
 
 ////
@@ -30,6 +31,24 @@ Search_Results::~Search_Results()
 }
 
 ////
+///  connecting to database
+////
+bool Search_Results::connOpen()   {
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE", "test.db");
+    mydb.setDatabaseName("C:/Users/laesc/OneDrive/Documents/ToolBuddy/test.db");
+    if (mydb.open())    {
+        ui->statusLabel->setText("Connected!");
+        qDebug()<<("Connected");
+        return true;
+    }
+    else    {
+        ui->statusLabel->setText("Connection Not Successful...");
+        qDebug()<<("Not Connected");
+        return false;
+    }
+}
+
+////
 ///  This function will run the query requested from the main menu and
 ///   concatenate all of the applicable results into variable result. If the
 ///   query was successful, the result will be displayed and the status display
@@ -37,21 +56,37 @@ Search_Results::~Search_Results()
 ///   "No Match" and the status display will print the error.
 ////
 void Search_Results::displayResults() {
-    QSqlQuery qry("SELECT * FROM tools");
+    QSqlQuery qry("SELECT tool_id FROM tools WHERE tool_name LIKE 'hammer'"); //This is where you can insert a name of an item to test the database query!
+//    qry.prepare("SELECT tool_id FROM tools WHERE tool_name LIKE %key");
+//    qry.bindValue(0, key);
     while (qry.next())  {
         int i = 0;
         returnValues = qry.value(i).toString();
-        result += returnValues + "\n";
+        ui->resultsDisplay->addItem(returnValues);
         i++;
     }
 
     if(qry.exec())    {
-        ui->resultsDisplay->setText(result);
         ui->queryStatusDisplay->setText("Query Successful!");
     }
     else    {
-        ui->resultsDisplay->setText("No Match\n");
+        ui->resultsDisplay->addItem("No Match\n");
         ui->queryStatusDisplay->setText(qry.lastError().text());
     }
 }
 
+////
+///   this is the function to entering an items page from the search results
+////
+void Search_Results::on_resultsDisplay_itemDoubleClicked(QListWidgetItem *item)
+{
+    result = item->text();
+    Edit_Item page;
+    page.exec();
+}
+
+void Search_Results::setKey(QString k)
+{
+    key = k;
+    qDebug() << "Key was set " << key;
+}

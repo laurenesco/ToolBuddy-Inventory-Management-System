@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>toolbuddylogo50.png</file>
+        <file>refresh-icon-10831(1).png</file>
+        <file>pngfind.com-dictionary-png-664839.png</file>
+        <file>qr icon.png</file>
+        <file>data_dictionary.html</file>
+    </qresource>
+</RCC>

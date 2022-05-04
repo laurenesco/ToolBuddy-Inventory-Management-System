@@ -45,7 +45,7 @@ void Add_item::createTable()    {
     QSqlQuery qry;
     qry.prepare( "CREATE TABLE IF NOT EXISTS tools (tool_id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT, tool_name VARCHAR(30), logo BLOB)" );
         if( !qry.exec() )
-            qDebug() << qry.lastError();
+            qDebug() << "Table not Created" << qry.lastError();
         else
             qDebug() << "Table 'tools' created!";
 }
@@ -54,17 +54,11 @@ void Add_item::createTable()    {
 ///  connecting to database
 ////
 bool Add_item::connOpen()   {
-    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE", "test.db");
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
     mydb.setDatabaseName("C:/Users/laesc/OneDrive/Documents/ToolBuddy/test.db");
     if (mydb.open())    {
         ui->statusLabel->setText("Connected!");
         qDebug()<<("Connected");
-    QSqlQuery qry;
-    qry.prepare( "CREATE TABLE IF NOT EXISTS tools (tool_id INTEGER UNIQUE PRIMARY KEY AUTOINCREMENT, tool_name VARCHAR(30), logo BLOB)" );
-        if( !qry.exec() )
-            qDebug() << qry.lastError();
-        else
-            qDebug() << "Table 'tools' created!";
         return true;
     }
     else    {
@@ -81,24 +75,26 @@ bool Add_item::connOpen()   {
 ////
 void Add_item::on_resetButton_clicked() {
     ui->nameField->setText(" ");
-    ui->locationField->setText(" ");
-    ui->safetyField->setText(" ");
-    ui->summaryField->setText(" ");
-    ui->useField->setText(" ");
+    ui->idField->setText("");
+//    ui->locationField->setText(" ");
+//    ui->safetyField->setText(" ");
+//    ui->summaryField->setText(" ");
+//    ui->useField->setText(" ");
 }
 
 ////
 ///  passes data to database upon clicking submit button
 ////
 void Add_item::on_submitButton_clicked()    {
+
     QString name, location, safety, summary, possibleUses;
     int idNumber;
-    idNumber =             ui->testIdBox->text().toInt();
+    idNumber =             ui->idField->text().toInt();
     name =                      ui->nameField->text();
-    location =                  ui->locationField->text();
-    safety =                     ui->safetyField->text();
-    summary =                ui->summaryField->text();
-    possibleUses =            ui->useField->text();
+//    location =                  ui->locationField->text();
+//    safety =                     ui->safetyField->text();
+//    summary =                ui->summaryField->text();
+//    possibleUses =            ui->useField->text();
 
     QSqlQuery qry;
 

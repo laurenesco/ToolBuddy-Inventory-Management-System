@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     add_item.cpp \
     data_dictionary.cpp \
+    edit_item.cpp \
     main.cpp \
     main_menu.cpp \
     qr_search.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     add_item.h \
     data_dictionary.h \
+    edit_item.h \
     main_menu.h \
     qr_search.h \
     search_results.h
@@ -28,6 +30,7 @@ HEADERS += \
 FORMS += \
     add_item.ui \
     data_dictionary.ui \
+    edit_item.ui \
     main_menu.ui \
     qr_search.ui \
     search_results.ui
