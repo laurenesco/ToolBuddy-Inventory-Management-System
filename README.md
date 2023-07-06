@@ -5,4 +5,6 @@ information about the item, thus removing the barrier to entry of not knowing ho
 safety precautions, best practices, and more. ToolBuddy is intended to be used by university labs, departments, or even hobbyists looking for a solution to keep 
 track of and store information about new tools.
 
+The application was built using Qt, and is written primarily in C++. It also utilizes a MySQL database for information storage.
+
 This project originated as the final project for StMU EG 1305.
